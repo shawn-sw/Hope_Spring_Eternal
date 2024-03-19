@@ -20,13 +20,16 @@ class Menu extends Phaser.Scene {
         // preload map
         this.load.image('tilesetImage', 'tile.png')
         this.load.tilemapTiledJSON('tilemapJSON', 'level1.json')
+        this.load.tilemapTiledJSON('tilesecondmapJSON', 'level2.json')
 
         // preload item
         this.load.image('item', 'item.png')
         this.load.image('jail', 'jail.png')
 
         // preload enemy
-        this.load.image('wall', 'wall.png')
+        this.load.image('wallA', 'emeny1.png')
+        this.load.image('wall', 'emeny2.png')
+        this.load.image('wall2', 'emeny3.png')
 
         // preload bgm
         this.load.audio('ring', './sound/warning.wav')
@@ -57,8 +60,8 @@ class Menu extends Phaser.Scene {
 
         // create title
         let menuConfig = {
-            fontFamily: 'Courier',
-            fontSize: '20px',
+            fontFamily: 'PressStart2P',
+            fontSize: '10px',
             color: '#141312',
             align: 'right',
             padding: {
@@ -68,16 +71,20 @@ class Menu extends Phaser.Scene {
             fixedWidth: 0
         }
         this.add.text(game.config.width/2, 40, 'H o p e', menuConfig).setOrigin(0.5)
-        menuConfig.fontSize = '40px'
+        menuConfig.fontSize = '30px'
         this.add.text(game.config.width/2, 65, 'Springs', menuConfig).setOrigin(0.5)
-        menuConfig.fontSize = '20px'
-        this.add.text(game.config.width/2, 90, 'E t e r n a l', menuConfig).setOrigin(0.5)
+        menuConfig.fontSize = '15px'
+        this.add.text(game.config.width/2, 95, 'E t e r n a l', menuConfig).setOrigin(0.5)
 
         // create text
-        this.add.text(game.config.width/2, 200, 'Press [SPACE] to Select', menuConfig).setOrigin(0.5)
+        menuConfig.fontSize = '15px'
+        this.add.text(game.config.width/2, 200, 'Press [SPACE] to Start', menuConfig).setOrigin(0.5)
+        menuConfig.fontSize = '10px'
+        this.add.text(game.config.width/2, 230, 'Press [C] to Credits', menuConfig).setOrigin(0.5)
 
         // create input
         this.cursors = this.input.keyboard.createCursorKeys()
+        keyC = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.C)
 
         // create HTML document
         document.getElementById('info').innerHTML = '<strong>Operation guide:</strong> <br /> SPACE: select <br /> Arrows: move'
@@ -89,10 +96,14 @@ class Menu extends Phaser.Scene {
         //this.scene.start('DemoScene')   
 
         // move to play scene
-        if (this.cursors.space.isDown) {
+        if (Phaser.Input.Keyboard.JustDown(keyC)) {
             this.sound.bgm.stop()
             this.sound.play('unlock')
-            this.scene.start('DemoScene')    
-        }
+            this.scene.start('CreditsScene')    
+        }else if(this.cursors.space.isDown) {
+            this.sound.bgm.stop()
+            this.sound.play('unlock')
+            this.scene.start('Level1Scene')    
+          }
     }
 }

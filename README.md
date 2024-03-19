@@ -25,7 +25,7 @@ Players aim to escape the prison quickly, navigating through challenges that add
 |Selection/Movement:  |Arrow Keys|
 
 ## Game Link:
-[[Hope Spring Eternal](https://shawn-sw.github.io/fake/)]
+[[Hope Spring Eternal](https://shawn-sw.github.io/Hope_Spring_Eternal/)]
 
 ## Browser Compatibility:
 Mac: Safari and Chrome

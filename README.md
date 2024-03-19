@@ -8,8 +8,8 @@
 |Course: |CMPM 120|
 |Semester: |Winter 2023|
 |||
-|Version: |1.0|
-|Release Date: |Mar 8, 2024|
+|Version: |1.1|
+|Release Date: |Mar 18, 2024|
 
 ## Synopsis:
 "Hope Spring Eternal" draws inspiration from the iconic prison escape scene in "The Shawshank Redemption." 
@@ -21,6 +21,7 @@ Players aim to escape the prison quickly, navigating through challenges that add
 |---|---|
 |||
 |Confirm Actions:     |SPACE  |
+|Confirm Actions:     |C/R  |
 |Selection/Movement:  |Arrow Keys|
 
 ## Game Link:
